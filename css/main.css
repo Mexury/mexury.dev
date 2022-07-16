@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*, *::before, *::after {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: black;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+button {
+    all: unset;
+}
+
+.comingsoon {
+    width: 100%;
+    font-size: clamp(40px, 5vw, 100px);
+    color: black;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    line-height: 1em;
+    -webkit-text-stroke: .03em white;
+    margin-left: 2em;
+}
+
+.comingsoon button:first-of-type {
+}
+
+.comingsoon button:last-of-type {
+    margin-top: .1em;
+    font-size: 2.5em;
+    line-height: 1em;
+    color: black;
+    -webkit-text-stroke: .03em white;
+}
+
+.comingsoon button:is(:hover, :active, :focus-visible) {
+    color: white;
+}
