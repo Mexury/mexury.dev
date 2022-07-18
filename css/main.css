@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
 
 *, *::before, *::after {
     margin: 0;
@@ -11,41 +11,86 @@ html, body {
     width: 100vw;
     overflow: hidden;
     background: black;
+    color: white;
 }
 
 body {
     display: flex;
-    align-items: center;
-    justify-content: flex-start;
+    flex-direction: column;
+    padding: 10.625em;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 3.75em;
 }
 
 button {
     all: unset;
 }
 
-.comingsoon {
-    width: 100%;
-    font-size: clamp(40px, 5vw, 100px);
-    color: black;
-    font-weight: bold;
+.information-wrapper, .button-wrapper {
+    z-index: 1;
+}
+
+.button-wrapper {
+    margin-top: auto;
     display: flex;
-    flex-direction: column;
-    line-height: 1em;
-    -webkit-text-stroke: .03em white;
-    margin-left: 2em;
+    gap: 2.5em;
 }
 
-.comingsoon button:first-of-type {
+button {
+    font-size: 3.125em;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    padding: 2em;
+    max-height: 100px;
+    aspect-ratio: 1/1;
+    background-size: 100%;
+    position: relative;
 }
 
-.comingsoon button:last-of-type {
-    margin-top: .1em;
-    font-size: 2.5em;
-    line-height: 1em;
+button p {
+    z-index: 1;
+    background-size: 0%;
+    font-family: 'Playfair Display', serif;
+}
+
+button:hover::after {
+    content: '';
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    height: calc(100% - 2rem);
+    width: calc(100% - 2rem);
+    z-index: 0;
+    background-color: black;
+}
+
+button:hover p {
+    background-size: 100%;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+button:nth-of-type(1), button:nth-of-type(1) p {
+    background-image: url("../content/grad1.jpg");
     color: black;
-    -webkit-text-stroke: .03em white;
 }
-
-.comingsoon button:is(:hover, :active, :focus-visible) {
+button:nth-of-type(2), button:nth-of-type(2) p {
+    background-image: url("../content/grad2.jpg");
+    color: white;
+}
+button:nth-of-type(3), button:nth-of-type(3) p {
+    background-image: url("../content/grad3.jpg");
+    color: black;
+}
+button:nth-of-type(4), button:nth-of-type(4) p {
+    background-image: url("../content/grad4.jpg");
     color: white;
 }
