@@ -14,20 +14,23 @@ html, body {
     color: white;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    padding: 10.625em;
-}
-
 h1 {
     font-family: 'Playfair Display', serif;
     font-weight: bold;
-    font-size: 3.75em;
+    font-size: clamp(2em, 15vw, 3.75em);
 }
 
 button {
     all: unset;
+}
+
+.content {
+    padding: 10.625em;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
 }
 
 .information-wrapper, .button-wrapper {
@@ -49,10 +52,11 @@ button {
     justify-content: center;
     font-weight: bold;
     padding: 2em;
-    max-height: 100px;
+    height: 100px;
     aspect-ratio: 1/1;
     background-size: 100%;
     position: relative;
+    background-size: cover;
 }
 
 button p {
@@ -93,4 +97,36 @@ button:nth-of-type(3), button:nth-of-type(3) p {
 button:nth-of-type(4), button:nth-of-type(4) p {
     background-image: url("../content/grad4.jpg");
     color: white;
+}
+
+@media only screen and (max-width: 1550px) {
+    button {
+        aspect-ratio: unset;
+        height: 50px;
+        flex: 1 1 100%;
+        border: 2px solid red;
+        padding: 1.2em;
+        font-size: clamp(1em, 2vw, 3em);
+    }
+    .button-wrapper {
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+    .information-wrapper {
+        margin-bottom: 5em;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    .information-wrapper {
+        margin-bottom: 0;
+    }
+    .content {
+        padding: 2.5em;
+    }
+    button {
+        border: 2px solid red;
+        padding: 1em;
+        font-size: clamp(1.6em, 2.4vw, 3em);
+    }
 }
